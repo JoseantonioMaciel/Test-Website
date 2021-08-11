@@ -9,7 +9,6 @@
     top: 0;
     z-index: 999;
   }
-  
   .navbar-container {
     display: flex;
     justify-content: center;
@@ -60,15 +59,6 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-  }
-  
-  .nav-links:hover {
-    border-bottom: 4px solid #408ec1;
-    transition: all 0.2s ease-out;
-  }
-  .nav-links-logo:hover {
-    border-bottom: 5px solid #408ec1;
-    transition: all 0.2s ease-out;
   }
   
   .fa-bars {

@@ -1,31 +1,25 @@
 import React from 'react';
 import '../App.css';
-import { Button } from './Button';
+
 import './HeroSection.css';
-import {Link} from 'react-scroll'
+
+import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
+import Box from "@material-ui/core/Box";
+import { Container } from "@material-ui/core";
 
 function HeroSection() {
   return (
-    <div className='hero-container'>
-      {/** <video src='/videos/TimeLaps.mp4' autoPlay loop muted />*/}
-      
-      <div>  </div>
-    {/** <Link className = "IDK" to="something" smooth={true} duration={1000}>See Cards</Link>
-      * <img alt="Error" src="images/MAIN.png"  />
-      * 
-     */}
-      <div className='hero-btns'>
-        {/** */}
-        <Button
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-          onClick={console.log('hey')}
-        >
-          Learn More<i className='far fa-play-circle' />
-        </Button>
-      </div>
-    </div>
+   
+   <Container maxWidth="xl">
+      <Box sx={{ width: "100%" }}>
+          <Card >
+            <CardMedia component="img" image="images/Banner.jpg"/>
+            
+          </Card>
+        </Box>
+        </Container>
+    
   );
 }
 

@@ -1,67 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import * as React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import Avatar from "@material-ui/core/Avatar";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 
-function Navbar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
 
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
 
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener('resize', showButton);
-
+export default function Navbar() {
+  const theme = createTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  
   return (
-    <>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/services'className='nav-links'onClick={closeMobileMenu}>
-                Services
-              </Link>
-            </li>
-
-            <li className='nav-links-logo'>
-              <Link to='/'className='navbar-logo'onClick={closeMobileMenu}>
-              <img alt="Error" src="images/logo.png" width="250" />
-              </Link>
-            </li>
-
-            <li className='nav-item'>
-              <Link to='/products' className='nav-links'onClick={closeMobileMenu}>
-                Gallery 
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/products'className='nav-links'onClick={closeMobileMenu}>
-                Contact
-              </Link>
-            </li>            
-          </ul>      
-        </div>
-      </nav>
-    </>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <Avatar
+              alt="UDS"
+              src="/static/images/logoColor.png"
+              sx={{ width: 56, height: 56 }}
+            />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Ultimate Drafting Services
+          </Typography>
+          <Box 
+          display={ matches ? 'none':'block' }   >
+            <Button color="inherit">Home</Button>
+            <Button color="inherit">Gallery</Button>
+            <Button color="inherit">Services</Button>
+            <Button color="inherit">Contact</Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
-
-export default Navbar;

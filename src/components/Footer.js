@@ -8,33 +8,34 @@ import Skeleton from "@material-ui/core/Skeleton";
 import { Container } from "@material-ui/core";
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import BusinessIcon from '@material-ui/icons/Business';
+import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
+import CallIcon from '@material-ui/icons/Call';
+import EmailIcon from '@material-ui/icons/Email';
 
 function Footer() {
   return (
-    <div className='footer-container'>
+    
     <Container maxWidth="xl">
       <Box sx={{ width: "100%" }}>
         <Grid container justifyContent="center">
           <Grid item>
-            <Card sx={{ maxWidth: 345, m: 2 }}>
+            <Card  sx={{ maxWidth: 345, m: 2 }}>
               <CardHeader
                 avatar={
-                  <Skeleton
-                    animation="wave"
-                    variant="circular"
-                    width={40}
-                    height={40}
-                  />
+                  <BusinessIcon/>
                 }
                 title={
-                  <Skeleton
-                    animation="wave"
-                    height={20}
-                    width={90}
-                    style={{ marginBottom: 6 }}
-                  />
+                  <Typography variant="body1"  color="text.secondary" >
+                  Address
+                  </Typography>
                 }
-                subheader={<Skeleton animation="wave" height={10} width={90} />}
+                subheader={
+                <Typography variant="body1" wrapped color="text.secondary" >
+                12950 Paramount Blvd Ste. 201, Downey, CA 90242
+                </Typography>
+                }
               />
             </Card>
           </Grid>
@@ -42,22 +43,18 @@ function Footer() {
             <Card sx={{ maxWidth: 345, m: 2 }}>
               <CardHeader
                 avatar={
-                  <Skeleton
-                    animation="wave"
-                    variant="circular"
-                    width={40}
-                    height={40}
-                  />
+                  <QueryBuilderIcon/>
                 }
                 title={
-                  <Skeleton
-                    animation="wave"
-                    height={20}
-                    width={90}
-                    style={{ marginBottom: 6 }}
-                  />
+                  <Typography variant="body1"  color="text.secondary" >
+                  Business Hours
+                  </Typography>
                 }
-                subheader={<Skeleton animation="wave" height={10} width={90} />}
+                subheader={
+                <Typography variant="body1" wrapped color="text.secondary" >
+                Monday - Friday 7am to 5pm
+                </Typography>
+                }
               />
             </Card>
           </Grid>
@@ -65,22 +62,18 @@ function Footer() {
             <Card sx={{ maxWidth: 345, m: 2 }}>
               <CardHeader
                 avatar={
-                  <Skeleton
-                    animation="wave"
-                    variant="circular"
-                    width={40}
-                    height={40}
-                  />
+                  <CallIcon/>
                 }
                 title={
-                  <Skeleton
-                    animation="wave"
-                    height={20}
-                    width={90}
-                    style={{ marginBottom: 6 }}
-                  />
+                  <Typography variant="body1"  color="text.secondary" >
+                  Call Us
+                  </Typography>
                 }
-                subheader={<Skeleton animation="wave" height={10} width={90} />}
+                subheader={
+                <Typography variant="body1" wrapped color="text.secondary" >
+                (310) 713-9350
+                </Typography>
+                }
               />
             </Card>
           </Grid>
@@ -88,22 +81,18 @@ function Footer() {
             <Card sx={{ maxWidth: 345, m: 2 }}>
               <CardHeader
                 avatar={
-                  <Skeleton
-                    animation="wave"
-                    variant="circular"
-                    width={40}
-                    height={40}
-                  />
+                  <EmailIcon/>
                 }
                 title={
-                  <Skeleton
-                    animation="wave"
-                    height={20}
-                    width={90}
-                    style={{ marginBottom: 6 }}
-                  />
+                  <Typography variant="body1"  color="text.secondary" >
+                  Email Us
+                  </Typography>
                 }
-                subheader={<Skeleton animation="wave" height={10} width={90} />}
+                subheader={
+                <Typography variant="body1" wrapped color="text.secondary" >
+                team@ultimatedraftingpro.com
+                </Typography>
+                }
               />
             </Card>
           </Grid>
@@ -114,7 +103,7 @@ function Footer() {
       <Grid container justifyContent="center">
         <Grid item xs={6}>
           <Tooltip title="Add" placement="left-end">
-          <Button>something</Button>
+          <Button> </Button>
             
           </Tooltip>
         </Grid>
@@ -126,7 +115,7 @@ function Footer() {
       </Grid>
 
     </Container>
-    </div>
+  
   );
 }
 
