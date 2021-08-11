@@ -2,7 +2,7 @@ import React from 'react';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import Grid from '@material-ui/core/Grid';
+
 
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -42,6 +42,7 @@ function QuiltedImageList() {
                 ))}
         
         </ImageList>
+        
     );
     }
 
