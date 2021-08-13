@@ -4,7 +4,6 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import Skeleton from "@material-ui/core/Skeleton";
 import { Container } from "@material-ui/core";
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
@@ -52,7 +51,7 @@ function Footer() {
                 }
                 subheader={
                 <Typography variant="body1" wrapped color="text.secondary" >
-                Monday - Friday 7am to 5pm
+                Monday - Friday 8am to 5pm
                 </Typography>
                 }
               />
@@ -71,7 +70,7 @@ function Footer() {
                 }
                 subheader={
                 <Typography variant="body1" wrapped color="text.secondary" >
-                (310) 713-9350
+                (714) 853-3957
                 </Typography>
                 }
               />
