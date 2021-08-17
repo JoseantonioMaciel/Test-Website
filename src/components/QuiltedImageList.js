@@ -2,6 +2,8 @@ import React from 'react';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { createTheme } from '@material-ui/core/styles';
 
 
 
@@ -10,18 +12,17 @@ function srcset(image, size, rows = 1, cols = 1) {
   ${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format&dpr=2 2x`;
 }
 
+//
+
 function QuiltedImageList() {
+    const theme = createTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         
         <ImageList
-            sx={{  
-                width:['100%'] , 
-                bgcolor: 'common.white', 
-            }}
-            
             variant="quilted"
-            cols={4}
-            rowHeight={161}
+            cols={  matches ? '2 ':'4' } 
+            rowHeight={matches ? ' 70':'150'}
             gap={25}
             >
                 {itemData.map((item) => (
@@ -34,8 +35,8 @@ function QuiltedImageList() {
                     />
                     
                     <ImageListItemBar
-                    title={item.title}
-                    subtitle={item.author}
+                    title={item.author}
+                    subtitle={item.title}
                     />
                     </ImageListItem>
                     

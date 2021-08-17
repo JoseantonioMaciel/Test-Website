@@ -17,6 +17,7 @@ function Footer() {
   return (
     <section id="Contact">
     <Container maxWidth="xl">
+      
       <Box sx={{ width: "100%" }}>
         <Grid container justifyContent="center">
           <Grid item>
